@@ -1,5 +1,5 @@
-import readline from 'readline';
-import fs from 'fs'
+import readline from "readline";
+import fs from "fs";
 
 let realValue = "";
 
@@ -18,7 +18,7 @@ document.addEventListener("keypress", (e) => {
   }
 });
 
-function code(text) {
+async function code(text) {
   var msg = text;
   var result = "";
 
@@ -29,11 +29,11 @@ function code(text) {
     }
   }
   const rl = readline.createInterface({
-    input: fs.createReadStream('./0000.txt'),
-    crfDelay: Infinity
+    input: fs.createReadStream("./0000.txt"),
+    crfDelay: Infinity,
   });
 
   for await (const ligne of rl) {
-    console.log(ligne)
+    console.log(ligne);
   }
 }
