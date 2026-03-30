@@ -21,7 +21,7 @@ async function code(text) {
   var result = [];
   var temp = "";
   var msg_a = [];
-
+  console.log("checkpoint 1");
   msg_a = msg.split("").map((c) => c.charCodeAt(0));
 
   const rep = await fetch("./0000.txt");
@@ -38,6 +38,9 @@ async function code(text) {
     }
   });
   if (result === msg_a) {
+    console.log("checkpoint 2");
     alert("you pass");
+  } else {
+    console.log("checkpoint 2.1");
   }
 }
