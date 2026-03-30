@@ -63,6 +63,7 @@ body {
     height: 3.8vh;
     font: inherit;
     color: inherit;
+    margin: 0;
 }
 input:focus {
     outline: none;
