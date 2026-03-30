@@ -10,9 +10,9 @@ document.getElementById("textbox").addEventListener("input", function (e) {
   e.target.value = "✱".repeat(realValue.length);
 });
 
-document.addEventListener("keypress", async (e) => {
+document.addEventListener("keypress", (e) => {
   if (e.code === "Enter" && document.getElementById("textbox").value === null) {
-    await code(document.getElementById("textbox").value);
+    code(document.getElementById("textbox").value);
   }
 });
 
