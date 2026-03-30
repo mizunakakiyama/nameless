@@ -36,7 +36,7 @@ async function code(text) {
   }
 
   lines.forEach((line) => {
-    cur_line = line.split(":");
+    var cur_line = line.split(":");
     if (cur_line[1] === msg_f) {
       alert();
     } else {
