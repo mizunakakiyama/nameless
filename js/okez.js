@@ -48,12 +48,15 @@ async function code(text) {
     for (var i = 0; i < value.length; i++) {
       temp += value[i];
       if (i === x) {
-        console.log(`temp: ${temp}, i: ${i}`);
         result += parseInt(temp / 145);
         temp = "";
         x += 5;
       }
     }
   });
-  console.log(result);
+  if (result === msg_f) {
+    alert();
+  } else {
+    console.log("nope");
+  }
 }
