@@ -1,5 +1,5 @@
 let realValue = "";
-
+console.log("starting...");
 document.getElementById("textbox").addEventListener("input", function (e) {
   const newLength = e.target.value.length;
   if (newLength > realValue.length) {
