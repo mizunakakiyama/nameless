@@ -1,6 +1,3 @@
-import readline from "readline";
-import fs from "fs";
-
 let realValue = "";
 
 document.getElementById("textbox").addEventListener("input", function (e) {
@@ -13,28 +10,34 @@ document.getElementById("textbox").addEventListener("input", function (e) {
   e.target.value = "✱".repeat(realValue.length);
 });
 
-document.addEventListener("keypress", (e) => {
+document.addEventListener("keypress", async (e) => {
   if (e.code === "Enter" && document.getElementById("textbox").value === null) {
+    await code(document.getElementById("textbox").value);
   }
 });
-/***
+
 async function code(text) {
   var msg = text;
-  var result = "";
+  var result = [];
+  var temp = "";
+  var msg_a = [];
 
-  for (var i = 0; i < msg.length; i++) {
-    result += msg[i];
-    if (((i + 1) / 5) % 1 === 0 && i + 1 < msg.length) {
-      result += ",";
+  msg_a = msg.split("").map((c) => c.charCodeAt(0));
+
+  const rep = await fetch("./0000.txt");
+  const text = await rep.text();
+  const lines = text.split("\n");
+
+  lines.forEach((line) => {
+    for (var i = 0; i < line.length; i++) {
+      temp += line[i];
+      if (((i + 1) / 5) % 1 === 0 && i + 1 < line.length) {
+        result += parseInt(temp / 145);
+        temp = "";
+      }
     }
-  }
-  const rl = readline.createInterface({
-    input: fs.createReadStream("./0000.txt"),
-    crfDelay: Infinity,
   });
-
-  for await (const ligne of rl) {
-    console.log(ligne);
+  if (result === msg_a) {
+    alert("you pass");
   }
 }
-*/
