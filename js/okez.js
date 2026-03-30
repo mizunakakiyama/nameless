@@ -25,8 +25,8 @@ async function code(text) {
   msg_a = msg.split("").map((c) => c.charCodeAt(0));
 
   const rep = await fetch("./0000.txt");
-  const text = await rep.text();
-  const lines = text.split("\n");
+  const letext = await rep.text();
+  const lines = letext.split("\n");
 
   lines.forEach((line) => {
     for (var i = 0; i < line.length; i++) {
