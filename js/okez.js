@@ -44,13 +44,13 @@ async function code(text) {
     }
   });*/
   Object.entries(data).forEach(([key, value]) => {
-    console.log(`${key}, ${value}`);
-    /***for (var i = 0; i < cur_line[1].length; i++) {
-      temp += cur_line[1][i];
-      if (((i + 1) / 5) % 1 === 0 && i + 1 < cur_line[1].length) {
+    for (var i = 0; i < value.length; i++) {
+      temp += value[i];
+      if (((i + 1) / 5) % 1 === 0 && i + 1 < value.length) {
         result.push(parseInt(temp / 145));
         temp = "";
       }
-    }*/
+    }
   });
+  console.log(result);
 }
