@@ -37,7 +37,7 @@ async function code(text) {
   console.log(`default msg: ${msg_f}`);
   lines.forEach((line) => {
     var cur_line = line.split(":");
-    console.log(cur_line);
+    console.log(line);
     if (cur_line[1] === msg_f) {
       alert();
     } else {
