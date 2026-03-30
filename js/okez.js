@@ -27,9 +27,7 @@ async function code(text) {
 
   msg_a = msg.split("").map((c) => c.charCodeAt(0));
 
-  const rep = await fetch("./0000.txt");
-  const letext = await rep.text();
-  const lines = letext.split("\n");
+  const rep = await response.json("./0000.json");
 
   for (var i = 0; i < msg_a.length; i++) {
     msg_f += msg_a[i];
@@ -45,8 +43,8 @@ async function code(text) {
       console.log("nope eh eh");
     }
   });*/
-  lines.forEach((line) => {
-    console.log(line)
+  Object.entries(data).forEach(([key, value]) => {
+    console.log(`${key}, ${value}`);
     /***for (var i = 0; i < cur_line[1].length; i++) {
       temp += cur_line[1][i];
       if (((i + 1) / 5) % 1 === 0 && i + 1 < cur_line[1].length) {
