@@ -40,6 +40,7 @@ async function code(text) {
     if (cur_line[1] === msg_f) {
       alert();
     } else {
+      console.log(`line: ${cur_line[1]}`);
       console.log("nope eh eh");
     }
   });
