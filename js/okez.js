@@ -34,7 +34,7 @@ async function code(text) {
   for (var i = 0; i < msg_a.length; i++) {
     msg_f += msg_a[i];
   }
-  console.log(`default msg: ${msg_a}`);
+  console.log(`default msg: ${msg_f}`);
   lines.forEach((line) => {
     var cur_line = line.split(":");
     if (cur_line[1] === msg_f) {
