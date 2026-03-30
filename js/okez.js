@@ -27,7 +27,7 @@ async function code(text) {
 
   msg_a = msg.split("").map((c) => c.charCodeAt(0));
 
-  const rep = await response.json("./0000.json");
+  const data = await (await fetch("./0000.json")).json();
 
   for (var i = 0; i < msg_a.length; i++) {
     msg_f += msg_a[i];
