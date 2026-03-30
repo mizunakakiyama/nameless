@@ -33,7 +33,7 @@ async function code(text) {
     for (var i = 0; i < line.length; i++) {
       temp += line[i];
       if (((i + 1) / 5) % 1 === 0 && i + 1 < line.length) {
-        result += parseInt(temp / 145);
+        result.push(parseInt(temp / 145));
         temp = "";
       }
     }
