@@ -1,5 +1,5 @@
-//import readline from "readline";
-//import fs from "fs";
+import readline from "readline";
+import fs from "fs";
 
 let realValue = "";
 
