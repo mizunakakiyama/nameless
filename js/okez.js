@@ -17,7 +17,7 @@ document.addEventListener("keypress", (e) => {
   if (e.code === "Enter" && document.getElementById("textbox").value === null) {
   }
 });
-
+/***
 async function code(text) {
   var msg = text;
   var result = "";
@@ -37,3 +37,4 @@ async function code(text) {
     console.log(ligne);
   }
 }
+*/
