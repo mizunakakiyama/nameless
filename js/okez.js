@@ -47,7 +47,7 @@ async function code(text) {
     for (var i = 0; i < value.length; i++) {
       temp += value[i];
       if (((i + 1) / 5) % 1 === 0 && i + 1 < value.length) {
-        result.push(parseInt(temp / 145));
+        result += parseInt(temp / 145);
         temp = "";
       }
     }
