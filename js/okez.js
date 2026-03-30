@@ -35,7 +35,7 @@ async function code(text) {
     msg_f += msg_a[i];
   }
   console.log(`default msg: ${msg_f}`);
-  lines.forEach((line) => {
+  /***lines.forEach((line) => {
     var cur_line = line.split(":");
     console.log(line);
     if (cur_line[1] === msg_f) {
@@ -44,9 +44,9 @@ async function code(text) {
       console.log(`line: ${cur_line[1]}`);
       console.log("nope eh eh");
     }
-  });
-  /***
+  });*/
   lines.forEach((line) => {
+    var cur_line = line.split(":");
     for (var i = 0; i < line.length; i++) {
       temp += line[i];
       if (((i + 1) / 5) % 1 === 0 && i + 1 < line.length) {
@@ -56,5 +56,4 @@ async function code(text) {
     }
   });
   console.log(`check msg: ${result}`);
-  */
 }
