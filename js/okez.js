@@ -43,8 +43,8 @@ async function code(text) {
     }
   });
   if (result === msg_f) {
-    document.getElementById("msg").value = "A secret has been reveled";
+    document.getElementById("msg").textContent = "A secret has been reveled";
   } else {
-    document.getElementById("msg").value = "This password does not exist";
+    document.getElementById("msg").textContent = "This password does not exist";
   }
 }
