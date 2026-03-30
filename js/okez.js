@@ -23,6 +23,7 @@ async function code(text) {
   var temp = "";
   var msg_a = [];
   var msg_f = "";
+  var x = 4;
   console.log("checkpoint 1");
 
   msg_a = msg.split("").map((c) => c.charCodeAt(0));
@@ -46,9 +47,11 @@ async function code(text) {
   Object.entries(data).forEach(([key, value]) => {
     for (var i = 0; i < value.length; i++) {
       temp += value[i];
-      if (((i + 1) / 5) % 1 === 0 && i + 1 < value.length) {
+      if (i === x) {
+        console.log(`temp: ${temp}, i: ${i}`);
         result += parseInt(temp / 145);
         temp = "";
+        x += 5;
       }
     }
   });
