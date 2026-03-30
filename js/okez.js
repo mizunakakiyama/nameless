@@ -13,7 +13,7 @@ document.getElementById("textbox").addEventListener("input", function (e) {
 document.addEventListener("keypress", (e) => {
   if (e.code === "Enter" && document.getElementById("textbox").value != null) {
     console.log("checkpoint 0");
-    code(document.getElementById("textbox").value);
+    code(realValue);
   }
 });
 
