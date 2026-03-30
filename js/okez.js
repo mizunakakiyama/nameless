@@ -19,7 +19,7 @@ document.addEventListener("keypress", (e) => {
 
 async function code(text) {
   var msg = text;
-  var result = [];
+  var result = "";
   var temp = "";
   var msg_a = [];
   var msg_f = "";
@@ -47,9 +47,9 @@ async function code(text) {
   });*/
   lines.forEach((line) => {
     var cur_line = line.split(":");
-    for (var i = 0; i < line.length; i++) {
-      temp += line[i];
-      if (((i + 1) / 5) % 1 === 0 && i + 1 < line.length) {
+    for (var i = 0; i < cur_line[1].length; i++) {
+      temp += cur_line[1][i];
+      if (((i + 1) / 5) % 1 === 0 && i + 1 < cur_line[1].length) {
         result.push(parseInt(temp / 145));
         temp = "";
       }
