@@ -54,7 +54,6 @@ async function code(text) {
         result.push(parseInt(temp / 145));
         temp = "";
       }
-    }
+    }*/
   });
-  console.log(`check msg: ${result}`);*/
 }
