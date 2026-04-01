@@ -1,6 +1,9 @@
 //appliquer une obfuscation de code à la fin
 //interactive text
 document.addEventListener("DOMContentLoaded", () => {
+  //broadcast
+  const canal = new BroadcastChannel("mdp_reveal");
+
   const paragraphe = document.querySelectorAll("p");
   const p = paragraphe[1];
 
@@ -39,4 +42,12 @@ function typing(element, text, speed = 50) {
       clearInterval(interval);
     }
   }, speed);
+
+  //update page
+  setInterval(() => {
+    const x_com = JSON.parse(localStorage.getItem("mdp_reveal"));
+    if (x_com.x1 === true) {
+      document.getElementById("x1").replace("▓▓▓▓", "<a>test</a>");
+    }
+  }, 1000);
 }

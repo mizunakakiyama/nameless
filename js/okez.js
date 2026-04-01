@@ -1,5 +1,8 @@
 let realValue = "";
 
+//broadcast
+const canal = new BroadcastChannel("mdp_reveal");
+
 document.getElementById("textbox").addEventListener("input", function (e) {
   const newLength = e.target.value.length;
   if (newLength > realValue.length) {
@@ -44,6 +47,8 @@ async function code(text) {
   });
   if (result === msg_f) {
     document.getElementById("msg").textContent = "A secret has been reveled";
+
+    localStorage.setItem("mdp_reveal", JSON.stringify({ x1: "true" }));
   } else {
     document.getElementById("msg").textContent = "This password does not exist";
   }
