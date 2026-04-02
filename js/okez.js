@@ -1,6 +1,8 @@
 let realValue = "";
 var x_data = { x1: false, x2: false };
 
+const canal = new BroadcastChannel("x_com");
+
 document.getElementById("textbox").addEventListener("input", function (e) {
   const newLength = e.target.value.length;
   if (newLength > realValue.length) {
