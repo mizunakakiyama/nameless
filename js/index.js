@@ -45,7 +45,17 @@ function typing(element, text, speed = 50) {
 
   //update page
   const saved = localStorage.getItem("my_data");
-  if (saved) afficher(JSON.parse(saved));
+  if (saved) maj(JSON.parse(saved));
+}
+window.addEventListener("storage", (event) => {
+  if (event.key === "my_data") {
+    maj(JSON.parse(event.newValue));
+  }
+});
+function maj(data) {
+  const x1 = document.getElementById("x1");
 
-  canal.onmessage = (e) => afficher(data);
+  if (data.x1 === true) {
+    x1.outerHTML = "<a>test</a>";
+  }
 }

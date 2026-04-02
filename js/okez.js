@@ -1,8 +1,5 @@
 let realValue = "";
-var x_data = [{ x1: false, x2: false }];
-
-//broadcast
-const canal = new BroadcastChannel("mdp_reveal");
+var x_data = { x1: false, x2: false };
 
 document.getElementById("textbox").addEventListener("input", function (e) {
   const newLength = e.target.value.length;
@@ -55,6 +52,6 @@ async function code(text) {
   }
 }
 function maj(data) {
-  localStorage.setItem("my_data", JSON.stringify(data));
+  localStorage.setItem("my_data", data);
   canal.postMessage(data);
 }
