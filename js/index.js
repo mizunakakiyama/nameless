@@ -47,6 +47,7 @@ function typing(element, text, speed = 50) {
   setInterval(() => {
     const x_com = JSON.parse(localStorage.getItem("mdp_reveal"));
     if (x_com.x1 === true) {
+      alert();
       document.getElementById("x1").replace("▓▓▓▓", "<a>test</a>");
     }
   }, 1000);
