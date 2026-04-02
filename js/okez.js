@@ -1,4 +1,5 @@
 let realValue = "";
+var x_data = [{ x1: false, x2: false }];
 
 //broadcast
 const canal = new BroadcastChannel("mdp_reveal");
@@ -16,6 +17,7 @@ document.getElementById("textbox").addEventListener("input", function (e) {
 document.addEventListener("keypress", (e) => {
   if (e.code === "Enter" && document.getElementById("textbox").value != null) {
     code(realValue);
+    maj(x_data);
   }
 });
 
@@ -47,9 +49,12 @@ async function code(text) {
   });
   if (result === msg_f) {
     document.getElementById("msg").textContent = "A secret has been reveled";
-
-    localStorage.setItem("mdp_reveal", JSON.stringify({ x1: "true" }));
+    x_data.x1 = true;
   } else {
     document.getElementById("msg").textContent = "This password does not exist";
   }
+}
+function maj(data) {
+  localStorage.setItem("my_data", JSON.stringify(data));
+  canal.postMessage(data);
 }
